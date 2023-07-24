@@ -1,0 +1,119 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "creation": "2023-07-18 13:00:56.631552",
+ "default_view": "List",
+ "doctype": "DocType",
+ "editable_grid": 1,
+ "engine": "InnoDB",
+ "field_order": [
+  "first_name",
+  "last_name",
+  "date_of_birth",
+  "post_code",
+  "authentication_key",
+  "amended_from",
+  "search_endpoint",
+  "demographics",
+  "correspondence_out",
+  "correspondence_in"
+ ],
+ "fields": [
+  {
+   "fieldname": "first_name",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "label": "First Name",
+   "reqd": 1
+  },
+  {
+   "fieldname": "last_name",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "label": "Last Name",
+   "reqd": 1
+  },
+  {
+   "fieldname": "post_code",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "label": "Post Code",
+   "reqd": 1
+  },
+  {
+   "fieldname": "authentication_key",
+   "fieldtype": "Data",
+   "label": "Authentication Key",
+   "reqd": 1
+  },
+  {
+   "fieldname": "amended_from",
+   "fieldtype": "Link",
+   "label": "Amended From",
+   "no_copy": 1,
+   "options": "BPS",
+   "print_hide": 1,
+   "read_only": 1
+  },
+  {
+   "default": "https://api.medirecords.com/v1/patients/search",
+   "fieldname": "search_endpoint",
+   "fieldtype": "Data",
+   "hidden": 1,
+   "label": "Search Endpoint"
+  },
+  {
+   "default": "https://api.medirecords.com/v1/patients/{patient_id}/addresses",
+   "fetch_from": "amended_from.patient_id",
+   "fieldname": "demographics",
+   "fieldtype": "Data",
+   "hidden": 1,
+   "label": "Demographics"
+  },
+  {
+   "default": "https://api.medirecords.com/v1/upload/patients/{patient_id}/correspondences/outbounds",
+   "fieldname": "correspondence_out",
+   "fieldtype": "Data",
+   "hidden": 1,
+   "label": "Correspondence Out"
+  },
+  {
+   "default": "https://api.medirecords.com/v1/upload/patients/{patient_id}/correspondences/inbounds",
+   "fieldname": "correspondence_in",
+   "fieldtype": "Data",
+   "hidden": 1,
+   "label": "Correspondence In"
+  },
+  {
+   "fieldname": "date_of_birth",
+   "fieldtype": "Date",
+   "in_list_view": 1,
+   "label": "Date of Birth",
+   "reqd": 1
+  }
+ ],
+ "index_web_pages_for_search": 1,
+ "links": [],
+ "modified": "2023-07-21 19:17:41.745231",
+ "modified_by": "Administrator",
+ "module": "Bps",
+ "name": "BPS",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "share": 1,
+   "write": 1
+  }
+ ],
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": []
+}
